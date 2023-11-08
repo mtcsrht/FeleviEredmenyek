@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
+
 namespace FeleviEredmenyek
 {
     class Person
@@ -27,14 +28,13 @@ namespace FeleviEredmenyek
             }
 
         }
-
+        
         public override string ToString()
         {
-            string returns = "";
-            returns += $"Név: {Nev}, Okt az: {OktAzon}, Jegyek:";
-            foreach (var j in Jegyek)
+            string returns = $"Név: {Nev}, Okt az: {OktAzon}, Jegyek:";
+            for (int i = 0; i < Jegyek.Count; i++)
             {
-                returns += j + " ";
+                returns += $"{Program.tantNevek[i]}: {Jegyek[i]}"; 
             }
             return returns;
         }

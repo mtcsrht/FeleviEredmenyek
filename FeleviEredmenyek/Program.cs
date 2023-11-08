@@ -9,11 +9,13 @@ namespace FeleviEredmenyek
     {
         private static List<Person> tanulok = new List<Person>();
 
+        public static List<string> tantNevek;
+
         static void Main(string[] args)
         {
             using var sr = new StreamReader(@"..\..\..\src\eredmenyek.txt");
 
-            List<string> tantNevek = sr.ReadLine().Split("\t").Skip(2).ToList();
+            tantNevek = sr.ReadLine().Split("\t").Skip(2).ToList();
             _ = sr.ReadLine();
             while (!sr.EndOfStream)
             { 
